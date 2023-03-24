@@ -1,0 +1,19 @@
+<p>formulario works!</p>
+<!-- para darle nombre a un elemento con angular, debo usar #nombrequequiera-->
+<input type="text" placeholder="Enter name" class="form-control" #name>
+<button class="btn btn-primary mt-2" (click)="ShowInConsole(name.value)">
+    Mostrar en consola
+</button>
+<!-- <div class="alert alert-primary mt-4" *ngIf="openAlert"> -->
+    <div class="alert alert-primary mt-4" *ngIf="openAlert; else mensaje">
+    <p>Se ha enviado el mensaje</p>
+    <!-- <button class="btn btn-danger" (click)="closeAlert()"> -->
+    <button class="btn btn-danger" (click)="openAlert=false">
+        X
+    </button>
+</div>
+<ng-template #mensaje>
+    <p class="alert alert-danger mt-4">
+        Mensaje de prueba
+    </p>
+</ng-template>

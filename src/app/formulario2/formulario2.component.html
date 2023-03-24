@@ -1,0 +1,35 @@
+<p>formulario2 works!</p>
+<div class="card">
+    <div class="card-body">
+    <form (ngSubmit)="procesar()" #formContact="ngForm">
+        <div class="mb-2">
+            <label class="form-label">
+                Nombre:
+            </label>
+            <input type="text" name="nombre" placeholder="Ingrese el nombre" class="form-control" [(ngModel)]="persona.nombre" required #name="ngModel">
+            <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">
+                Debe completar este campo
+            </div>
+        </div>
+        <div class="mb-2">
+            <label class="form-label">
+                Edad:
+            </label>
+            <input type="number" name="edad" placeholder="Ingrese la edad" class="form-control" [(ngModel)]="persona.edad" required #edad="ngModel">
+            <div class="alert alert-danger mt-2" [hidden]="edad.valid || edad.pristine">
+                Debe completar este campo
+            </div>
+        </div>
+        <!-- <button class="btn btn-primary mt-2" [disabled]="!name.valid && !edad.valid"> -->
+        <button class="btn btn-primary mt-2" [disabled]="formContact.invalid"> 
+            Enviar
+        </button>
+    </form>
+</div>
+
+</div>
+
+{{ persona | json }}
+{{ name.errors | json}}
+<br>
+{{ name.valid | json}}

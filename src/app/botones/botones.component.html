@@ -1,0 +1,24 @@
+<p>botones works!</p>
+<button [disabled]="button_disabled" class="btn btn-primary" (click)="text_color = 'text-primary'">color azul</button>
+<button [class.disabled]="button_disabled" class="btn btn-success mx-2" (click)="text_color = 'text-success'">color verde</button>
+<button [class]="{
+    'disabled': button_disabled,
+    'btn': true,
+    'btn-danger': true
+}" class="" (click)="text_color = 'text-danger'">color rojos</button>
+
+<!-- <p class="text-primary">Texto que cambiara de color</p> -->
+<p [class] = "text_color">Texto que cambiara de color</p>
+
+<button class="btn btn-secondary" (click)="button_disabled = !button_disabled">
+    Activar/Desactivar
+</button>
+<div>
+    <button class="btn btn-danger" (click)="src='https://media.istockphoto.com/id/1366579114/photo/dark-grey-kitchen-design-detail-of-interior.webp?s=612x612&w=is&k=20&c=N1dujs9aERCKXYeAh8cILwsB2ePGMj0e_Gfq72vGXWE='">
+        Image 1
+    </button>
+    <button class="btn btn-primary" (click)="src='https://media.istockphoto.com/id/1332097112/photo/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-surface-with-templates.webp?s=612x612&w=is&k=20&c=U-lb40VRrBDIANdjpkOrUqXIJahsF0384U8XYj5fCjg='">
+        Image 2
+    </button>
+</div>
+<img [src]="src">
